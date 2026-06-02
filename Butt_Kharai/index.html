@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Karahi House | Premium Pakistani Cuisine</title>
+  <meta name="description" content="Three generations of authentic Pakistani Karahi. Fire-roasted perfection since 1987.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+</head>
+<body class="loading">
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__content">
+      <div class="preloader__logo">
+        <span class="preloader__logo-text">TKH</span>
+      </div>
+      <div class="preloader__line">
+        <div class="preloader__line-fill"></div>
+      </div>
+      <div class="preloader__counter">0%</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo magnetic">
+        <span>TKH</span>
+      </a>
+      
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#hero" class="nav__link magnetic"><span>Home</span></a></li>
+        <li><a href="#heritage" class="nav__link magnetic"><span>Heritage</span></a></li>
+        <li><a href="#menu" class="nav__link magnetic"><span>Menu</span></a></li>
+        <li><a href="#experience" class="nav__link magnetic"><span>Ambiance</span></a></li>
+        <li><a href="#visit" class="nav__link magnetic"><span>Visit</span></a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="#reserve" class="nav__cta magnetic">Reserve Table</a>
+        <button class="nav__burger" id="navBurger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__content">
+      <a href="#hero" class="mobile-menu__link">Home</a>
+      <a href="#heritage" class="mobile-menu__link">Heritage</a>
+      <a href="#menu" class="mobile-menu__link">Menu</a>
+      <a href="#experience" class="mobile-menu__link">Ambiance</a>
+      <a href="#visit" class="mobile-menu__link">Visit</a>
+      <a href="#reserve" class="mobile-menu__cta">Reserve Table</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__bg-image" data-speed="0.5"></div>
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__eyebrow reveal-text">
+        <span>Est. 1987</span>
+        <span class="hero__dot">•</span>
+        <span>Peshawar</span>
+      </div>
+
+      <h1 class="hero__title">
+        <div class="hero__title-line">
+          <span class="char">F</span><span class="char">i</span><span class="char">r</span><span class="char">e</span><span class="char">.</span>
+        </div>
+        <div class="hero__title-line">
+          <span class="char accent">S</span><span class="char accent">p</span><span class="char accent">i</span><span class="char accent">c</span><span class="char accent">e</span><span class="char accent">.</span>
+        </div>
+        <div class="hero__title-line">
+          <span class="char">H</span><span class="char">e</span><span class="char">r</span><span class="char">i</span><span class="char">t</span><span class="char">a</span><span class="char">g</span><span class="char">e</span><span class="char">.</span>
+        </div>
+      </h1>
+
+      <p class="hero__subtitle reveal-text">
+        Three generations. One secret recipe. Every Karahi tells a story.
+      </p>
+
+      <div class="hero__buttons reveal-up">
+        <a href="#menu" class="btn btn--primary magnetic">
+          <span class="btn__text">Explore Menu</span>
+          <span class="btn__icon">→</span>
+        </a>
+        <a href="#reserve" class="btn btn--outline magnetic">
+          <span class="btn__text">Book a Table</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span class="hero__scroll-text">Scroll</span>
+      <div class="hero__scroll-line">
+        <div class="hero__scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERITAGE SECTION -->
+  <section class="heritage" id="heritage">
+    <div class="heritage__bg-pattern"></div>
+    
+    <div class="container">
+      <div class="heritage__grid">
+        <div class="heritage__visual" data-parallax="0.3">
+          <div class="heritage__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800" alt="Heritage Kitchen" class="heritage__img" loading="lazy">
+            <div class="heritage__image-overlay"></div>
+          </div>
+          <div class="heritage__badge">
+            <span class="heritage__badge-number">37</span>
+            <span class="heritage__badge-text">Years</span>
+          </div>
+        </div>
+
+        <div class="heritage__content">
+          <span class="section-label reveal-text">Our Heritage</span>
+          <h2 class="section-title split-text">
+            The Secret Lives<br>
+            <span class="accent">in the Embers</span>
+          </h2>
+          <p class="heritage__lead reveal-up">
+            Since 1987, we've guarded a recipe passed down through three generations. 
+            No shortcuts. No compromises. Just slow-cooked perfection over real wood fire.
+          </p>
+
+          <ul class="heritage__features">
+            <li class="heritage__feature reveal-left">
+              <div class="heritage__feature-icon">🔥</div>
+              <div class="heritage__feature-text">
+                <strong>Wood-Fired Cooking</strong>
+                <span>Traditional clay ovens for authentic flavor</span>
+              </div>
+            </li>
+            <li class="heritage__feature reveal-left">
+              <div class="heritage__feature-icon">🌶️</div>
+              <div class="heritage__feature-text">
+                <strong>Hand-Ground Spices</strong>
+                <span>Freshly roasted and ground daily</span>
+              </div>
+            </li>
+            <li class="heritage__feature reveal-left">
+              <div class="heritage__feature-icon">🥩</div>
+              <div class="heritage__feature-text">
+                <strong>Premium Ingredients</strong>
+                <span>Grass-fed meat from trusted farms</span>
+              </div>
+            </li>
+          </ul>
+
+          <a href="#heritage-story" class="btn btn--text magnetic reveal-up">
+            <span>Our Story</span>
+            <span class="btn__arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-text">The Signature</span>
+        <h2 class="section-title split-text">
+          Our <span class="accent">Karahi</span> Collection
+        </h2>
+        <p class="section-subtitle reveal-up">
+          Handcrafted. Slow-cooked. Served sizzling.
+        </p>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="bento">
+        <div class="bento__item bento__item--large" data-tilt>
+          <div class="bento__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=800" alt="Mutton Karahi" loading="lazy">
+          </div>
+          <div class="bento__content">
+            <span class="bento__tag">Signature</span>
+            <h3>Mutton Karahi</h3>
+            <p>Slow-cooked 3 hours in pure ghee with secret masala</p>
+            <div class="bento__price">Rs. 2,800</div>
+          </div>
+          <div class="bento__hover-effect"></div>
+        </div>
+
+        <div class="bento__item" data-tilt>
+          <div class="bento__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1585937421612-70e008356f67?w=600" alt="Chicken Karahi" loading="lazy">
+          </div>
+          <div class="bento__content">
+            <span class="bento__tag">Classic</span>
+            <h3>Chicken Karahi</h3>
+            <div class="bento__price">Rs. 1,800</div>
+          </div>
+        </div>
+
+        <div class="bento__item" data-tilt>
+          <div class="bento__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=600" alt="Beef Karahi" loading="lazy">
+          </div>
+          <div class="bento__content">
+            <span class="bento__tag">Bold</span>
+            <h3>Beef Karahi</h3>
+            <div class="bento__price">Rs. 2,200</div>
+          </div>
+        </div>
+
+        <div class="bento__item bento__item--wide" data-tilt>
+          <div class="bento__image-wrapper">
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800" alt="Tandoori Naan" loading="lazy">
+          </div>
+          <div class="bento__content">
+            <span class="bento__tag">Fresh</span>
+            <h3>Tandoori Naan</h3>
+            <p>Hand-stretched, wood-fired — Rs. 80</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal Scroll Menu -->
+      <div class="horizontal-menu">
+        <h3 class="horizontal-menu__label reveal-text">The Full Menu <span class="arrow">→</span></h3>
+        
+        <div class="horizontal-menu__wrapper">
+          <div class="horizontal-menu__track" id="menuTrack">
+            
+            <div class="menu-card" data-speed="1.2">
+              <div class="menu-card__number">01</div>
+              <div class="menu-card__image">
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400" alt="Mutton Karahi" loading="lazy">
+              </div>
+              <h4>Mutton Karahi</h4>
+              <p>Tender mutton, tomatoes, green chilies, ginger, and our secret masala cooked over wood fire.</p>
+              <div class="menu-card__footer">
+                <span class="menu-card__price">Rs. 2,800</span>
+                <span class="menu-card__arrow">→</span>
+              </div>
+            </div>
+
+            <div class="menu-card" data-speed="1.1">
+              <div class="menu-card__number">02</div>
+              <div class="menu-card__image">
+                <img src="https://images.unsplash.com/photo-1585937421612-70e008356f67?w=400" alt="Chicken Karahi" loading="lazy">
+              </div>
+              <h4>Chicken Karahi</h4>
+              <p>Free-range chicken cooked in pure desi ghee with fresh herbs and tomatoes.</p>
+              <div class="menu-card__footer">
+                <span class="menu-card__price">Rs. 1,800</span>
+                <span class="menu-card__arrow">→</span>
+              </div>
+            </div>
+
+            <div class="menu-card" data-speed="1.0">
+              <div class="menu-card__number">03</div>
+              <div class="menu-card__image">
+                <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=400" alt="Beef Karahi" loading="lazy">
+              </div>
+              <h4>Beef Karahi</h4>
+              <p>Slow-braised beef shank with caramelized onions and bold spice profile.</p>
+              <div class="menu-card__footer">
+                <span class="menu-card__price">Rs. 2,200</span>
+                <span class="menu-card__arrow">→</span>
+              </div>
+            </div>
+
+            <div class="menu-card" data-speed="0.9">
+              <div class="menu-card__number">04</div>
+              <div class="menu-card__image">
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400" alt="Chapli Kebab" loading="lazy">
+              </div>
+              <h4>Peshawari Chapli Kebab</h4>
+              <p>Minced beef with pomegranate seeds, fried in beef fat until crispy.</p>
+              <div class="menu-card__footer">
+                <span class="menu-card__price">Rs. 950</span>
+                <span class="menu-card__arrow">→</span>
+              </div>
+            </div>
+
+            <div class="menu-card" data-speed="0.8">
+              <div class="menu-card__number">05</div>
+              <div class="menu-card__image">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400" alt="Naan" loading="lazy">
+              </div>
+              <h4>Tandoori Naan</h4>
+              <p>Wood-fired, butter-brushed, soft and pillowy fresh from the tandoor.</p>
+              <div class="menu-card__footer">
+                <span class="menu-card__price">Rs. 80</span>
+                <span class="menu-card__arrow">→</span>
+              </div>
+            </div>
+
+            <div class="menu-card" data-speed="0.7">
+              <div class="menu-card__number">06</div>
+              <div class="menu-card__image">
+                <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400" alt="Chai" loading="lazy">
+              </div>
+              <h4>Masala Chai</h4>
+              <p>Cardamom, saffron, and fresh milk — the perfect end to your meal.</p>
+              <div class="menu-card__footer">
+                <span class="menu-card__price">Rs. 180</span>
+                <span class="menu-card__arrow">→</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="experience" id="experience">
+    <div class="experience__bg" data-parallax="0.5">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200" alt="Restaurant Interior" loading="lazy">
+    </div>
+    <div class="experience__overlay"></div>
+
+    <div class="container">
+      <div class="experience__content">
+        <span class="section-label reveal-text">The Ambiance</span>
+        <h2 class="section-title split-text">
+          Dine in <span class="accent">Atmosphere</span>
+        </h2>
+        <p class="experience__lead reveal-up">
+          Warm lighting. Copper accents. The aroma of wood fire and fresh naan. 
+          An experience that engages all your senses.
+        </p>
+
+        <div class="experience__stats">
+          <div class="stat" data-count="37">
+            <div class="stat__number">
+              <span class="stat__count">0</span>
+              <span class="stat__plus">+</span>
+            </div>
+            <div class="stat__label">Years of Heritage</div>
+          </div>
+          <div class="stat" data-count="12000">
+            <div class="stat__number">
+              <span class="stat__count">0</span>
+              <span class="stat__plus">+</span>
+            </div>
+            <div class="stat__label">Happy Guests Monthly</div>
+          </div>
+          <div class="stat" data-count="14">
+            <div class="stat__number">
+              <span class="stat__count">0</span>
+              <span class="stat__plus">+</span>
+            </div>
+            <div class="stat__label">Signature Dishes</div>
+          </div>
+        </div>
+
+        <div class="experience__features reveal-up">
+          <div class="experience__feature">
+            <div class="experience__feature-icon">🎵</div>
+            <span>Live Music Fridays</span>
+          </div>
+          <div class="experience__feature">
+            <div class="experience__feature-icon">🍷</div>
+            <span>Private Dining</span>
+          </div>
+          <div class="experience__feature">
+            <div class="experience__feature-icon">🚗</div>
+            <span>Valet Parking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-text">Guest Voices</span>
+        <h2 class="section-title split-text">
+          What <span class="accent">They Say</span>
+        </h2>
+      </div>
+
+      <div class="reviews__grid">
+        <div class="review-card" data-tilt>
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"The mutton karahi here redefined my expectations. A masterpiece in a wok. The flavors are unmatched anywhere in Lahore."</p>
+          <div class="review-card__author">
+            <div class="review-card__author-info">
+              <strong>Ahmed Raza</strong>
+              <span>Food Critic, Dawn News</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card" data-tilt>
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Three generations of flavor in one bite. This is Pakistani cuisine at its finest. The ambiance transports you to old Peshawar."</p>
+          <div class="review-card__author">
+            <div class="review-card__author-info">
+              <strong>Sarah Malik</strong>
+              <span>Food Blogger · 120K followers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card" data-tilt>
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"From the moment you walk in, you're treated like family. The food is exceptional, but the hospitality is what keeps me coming back."</p>
+          <div class="review-card__author">
+            <div class="review-card__author-info">
+              <strong>Imran Khan</strong>
+              <span>Google Reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT SECTION -->
+  <section class="visit" id="visit">
+    <div class="container">
+      <div class="visit__grid">
+        <div class="visit__info">
+          <span class="section-label reveal-text">Find Us</span>
+          <h2 class="section-title split-text">
+            Visit <span class="accent">The House</span>
+          </h2>
+
+          <address class="visit__address">
+            <div class="visit__item reveal-left">
+              <div class="visit__icon">📍</div>
+              <div class="visit__text">
+                <strong>Address</strong>
+                <p>42 Food Street, Gawalmandi<br>Lahore, Pakistan</p>
+              </div>
+            </div>
+
+            <div class="visit__item reveal-left">
+              <div class="visit__icon">📞</div>
+              <div class="visit__text">
+                <strong>Phone</strong>
+                <p>+92 300 1234567<br>+92 42 1234567</p>
+              </div>
+            </div>
+
+            <div class="visit__item reveal-left">
+              <div class="visit__icon">🕐</div>
+              <div class="visit__text">
+                <strong>Hours</strong>
+                <p>Daily: 12 PM – 2 AM<br>Friday: 1 PM – 4 AM</p>
+              </div>
+            </div>
+          </address>
+
+          <div class="visit__social reveal-up">
+            <a href="#" class="visit__social-link magnetic">Instagram</a>
+            <a href="#" class="visit__social-link magnetic">Facebook</a>
+            <a href="#" class="visit__social-link magnetic">TikTok</a>
+          </div>
+        </div>
+
+        <div class="visit__map reveal-right" data-parallax="0.2">
+          <div class="map-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.6!2d74.3436!3d31.5546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDMzJzE2LjYiTiA3NMKwMjAnMzcuMCJF!5e0!3m2!1sen!2s!4v1700000000000" 
+              width="100%" 
+              height="600" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE SECTION -->
+  <section class="reserve" id="reserve">
+    <div class="reserve__bg"></div>
+    <div class="container">
+      <div class="reserve__content">
+        <span class="section-label reveal-text">Reservations</span>
+        <h2 class="section-title split-text">
+          Book Your <span class="accent">Table</span>
+        </h2>
+
+        <form class="reserve__form" id="reserveForm">
+          <div class="form-row">
+            <div class="form-group reveal-left">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-input" required placeholder="Your name">
+              <span class="form-input-border"></span>
+            </div>
+
+            <div class="form-group reveal-left">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" class="form-input" required placeholder="+92 XXX XXXXXXX">
+              <span class="form-input-border"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group reveal-left">
+              <label for="guests" class="form-label">Number of Guests</label>
+              <select id="guests" class="form-select">
+                <option value="2">2 People</option>
+                <option value="4" selected>4 People</option>
+                <option value="6">6 People</option>
+                <option value="8">8+ People</option>
+              </select>
+            </div>
+
+            <div class="form-group reveal-left">
+              <label for="date" class="form-label">Date & Time</label>
+              <input type="datetime-local" id="date" class="form-input" required>
+              <span class="form-input-border"></span>
+            </div>
+          </div>
+
+          <div class="form-group reveal-left">
+            <label for="message" class="form-label">Special Requests</label>
+            <textarea id="message" class="form-textarea" rows="3" placeholder="Any special occasions or dietary requirements?"></textarea>
+            <span class="form-input-border"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--large magnetic reveal-up">
+            <span class="btn__text">Reserve via WhatsApp</span>
+            <span class="btn__icon">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand reveal-up">
+          <h3 class="footer__logo">The Karahi House</h3>
+          <p>Three generations. One flame. Authentic Pakistani Karahi since 1987.</p>
+        </div>
+
+        <div class="footer__links">
+          <div class="footer__column reveal-up">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#heritage">Our Heritage</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#experience">Ambiance</a></li>
+              <li><a href="#reserve">Reservations</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column reveal-up">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="tel:+923001234567">+92 300 1234567</a></li>
+              <li><a href="mailto:info@karahihouse.pk">info@karahihouse.pk</a></li>
+              <li><a href="#visit">Location</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column reveal-up">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 The Karahi House. All rights reserved.</p>
+        <p class="footer__credit">Crafted with <span class="heart">❤</span> in Pakistan</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick Order Bar -->
+  <div class="quick-bar" id="quickBar">
+    <div class="quick-bar__content">
+      <span class="quick-bar__text">🔥 Craving authentic Karahi?</span>
+      <a href="#reserve" class="btn btn--primary btn--small magnetic">Order Now</a>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>
